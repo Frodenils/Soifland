@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu d'Alcool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    #player-list {
+      margin-top: 20px;
+    }
+
+    #add-player-form {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenue au Jeu d'Alcool</h1>
+
+  <div id="add-player-form">
+    <label for="playerName">Nom du Joueur:</label>
+    <input type="text" id="playerName" placeholder="Entrez le nom du joueur">
+    <button onclick="addPlayer()">Ajouter Joueur</button>
+  </div>
+
+  <div id="player-list">
+    <h2>Liste des Joueurs</h2>
+    <ul id="players"></ul>
+    <button onclick="startGame()">Commencer le Jeu</button>
+  </div>
+
+  <script>
+    function addPlayer() {
+      const playerNameInput = document.getElementById('playerName');
+      const playerName = playerNameInput.value.trim();
+
+      if (playerName !== '') {
+        const playersList = document.getElementById('players');
+        const listItem = document.createElement('li');
+        listItem.textContent = playerName;
+        playersList.appendChild(listItem);
+
+        // Effacer le champ de saisie
+        playerNameInput.value = '';
+      }
+    }
+
+    function startGame() {
+      const playersList = document.getElementById('players');
+      const players = Array.from(playersList.getElementsByTagName('li'));
+
+      if (players.length > 0) {
+        // Rediriger vers la page du jeu avec la liste des joueurs
+        const playerNames = players.map(player => player.textContent);
+        window.location.href = `game.html?players=${encodeURIComponent(JSON.stringify(playerNames))}`;
+      } else {
+        alert("Ajoutez au moins un joueur avant de commencer le jeu.");
+      }
+    }
+  </script>
+</body>
+</html>
