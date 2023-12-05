@@ -1,0 +1,42 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    #add-player-form, #player-list, #game-phrases {
+      margin: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #add-player-form button, #player-list button, #game-phrases button {
+      font-size: 1em;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    #add-player-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    #players {
+      list-style: none;
+      padding: 0;
+    }
+
+    #players li {
+      margin-bottom: 5px;
+    }
