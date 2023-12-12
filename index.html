@@ -49,18 +49,18 @@
   </style>
 </head>
 <body>
-  <h1>Bienvenue au Jeu d'Alcool</h1>
+  <h1>SOIFLAND</h1>
 
   <div id="add-player-form">
     <label for="playerName">Nom du Joueur:</label>
     <input type="text" id="playerName" placeholder="Entrez le nom du joueur">
     <button onclick="addPlayer()">Ajouter Joueur</button>
+    <h2>Liste des Joueurs</h2>
+    <ul id="players"></ul>
   </div>
 
   <div id="player-list">
-    <h2>Liste des Joueurs</h2>
-    <ul id="players"></ul>
-    <button onclick="startGame()">Commencer le Jeu</button>
+        <button onclick="startGame()">BIG PROUT</button>
   </div>
 
   <div id="game-phrases">
@@ -71,21 +71,63 @@
     let currentPlayerIndex = 0;
     const playersList = document.getElementById('players');
     const commonPhrases = [
-      "{Joueur1} et {Joueur2} boivent 1 gorgée",
-      "{Joueur1} choisit {Joueur2} pour boire 2 gorgées",
-      // Ajoutez d'autres phrases communes ici
+    "{Joueur1} et {Joueur2} boivent 1 gorgée",
+      "{Joueur1} choisit un autre joueur pour boire 2 gorgées",
+      "JEU CLAP TES MAINS",
+      "JEU DANS MA VALISE",
+      "Invente une règle",
+      "Supprime une règle",
+      "Ceux qui ont une bouteille en dessous de la moitié donne une shot (alcool fort)",
+      "Le créateur du jeu distribue 4 gorgées",
+      "La dernière personne qui a bu distribu 3 gorgées",
+      "{Joueur1} donne la date de naissance de {Joueur2} si tu te rates bois 3",
+      "{Joueur1} tu es la pute de {Joueur2}",
+      "Le joueur qui à pire le siège distribue 4 pour la bonne nuitée",
+      "Le joueur qui a le plus de cons sur lui, distribue 2",
+      "CARTE REVERSE (LUDO) à tout moment, LUDO peut renvoyer les gorgées que quelqu'un lui donne",
+      "CARTE COCUE, les deux personnes les plus proches de Charles boivent 1 shot",
+      "CARTE COUSCOUS - En cours de création",
+      "CARTE DE LA CHINE",
+      "Le prochain qui renverse quelque chose par terre boit 7 gorgées",
+      "{Joueur1} et {Joueur2} doivent citer la même bière en même temps, si c'est raté, 2 gorgées",
+      "Tout le monde pointe du doigt celui qui boit de trop petites gorgées, pour leur montrer qu'ils ont tord il va en prendre une GROSSE",
+      "Le plus 'sobre' doit montrer qu'il est à la hauteur de la soirée, fini ton verre ou reste une merde",
+      "Celui qui boit l'alcool le plus fort fait le gorille, les autres l'admire en buvant 1 gorgée",
+      "{Joueur1} à peur de Potter, 4 gorgées",
+      "Si tu bois à l'alcool blanc boit un shot",
+      "{Joueur1} cites une musique que tout le monde ici connait",
+      "CARTE CHANCE, {Joueur1} distribue 5 gorgées",
+      "Le plus lourd, tu tiens mieux l'alcool que les autres, alors 2 gorgées",
+      "JEU DU MOT QU'A UN RAPPORT {Joueur1} commence, ça tourne à gauche",
+      "Bravo, ouvre une bière et boit là",
+      "HAUT-BAS-HAUT Baptiste - Mathias",
+      "Ce qui n'ont pas travaillé boivent 5 gorgées",
+      "ERREUR DE DÉBUTANT celui qui a le verre le plus vide, boit dans le verre le plus plein",
+      "FORCE AUX CLOCHARDS ceux qui sont a la bière forte distribuent 3 gorgées",
+      "nannnnn",
+      "Si t'as le briquet de quelqu'un d'autre dans tes poches, tu bois 5 gorgées",
+      "Ceux qui ont vomis distribuent 1 shot à quelqu'un qui n'a pas vomi",
+      "Si il n'y a pas de drogue dans la soirée, tout le monde boit 2 gorgées",
+      "Si t'as déjà grillé un feu rouge bois 1",
+      "Pour les demoiselles, elles boivent 3 gorgées",
+      "Ceux qui ont pété les plombs distribuent 3 gorgées",
+      "{Joueur1} désigne 2 joueurs et un thème ils doivent citer ",
     ];
 
     const rarePhrases = [
-      "Phrase rare 1",
-      "Phrase rare 2",
-      // Ajoutez d'autres phrases rares ici
+      "{Joueur1} SHIFUMI POUR 1 SHOT",
+      "Charles est cocu",
+      "Nils a une tête de citron",
+      "Shean Paul Temperature",
+      "MANGER C'EST TRICHÉ - Celui qui a mangé en dernier bois 2",
+      "Les grosses merdes qui ont redoublé boivent 3 gorgées",
+      "Si il y'a un 4 dans l'heure tout le monde boit 1 gorgée",
+      "chacal chacal",
     ];
 
     const veryRarePhrases = [
       "Phrase très rare 1",
       "Phrase très rare 2",
-      // Ajoutez d'autres phrases très rares ici
     ];
 
     function addPlayer() {
